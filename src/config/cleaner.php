@@ -1,44 +1,66 @@
 <?php
-$docs = 'README* CHANGELOG* FAQ* CONTRIBUTING* HISTORY* UPGRADING* UPGRADE* package* demo example examples doc docs readme*';
-$tests = '.travis.yml .scrutinizer.yml phpunit.xml* phpunit.php test tests Tests';
+
+$docs = 'README* CHANGELOG* ChangeLog* FAQ* CONTRIBUTING* HISTORY* UPGRADING* UPGRADE* package* demo example examples doc docs readme*';
+$tests = '.travis.yml .scrutinizer.yml phpunit.xml* phpunit.php test tests Test Tests';
 $standard = "{$docs} {$tests}";
 
-return array(
+return [
     'dir'   => base_path() . '/vendor',
-    'rules' => array(
-        // Symfony components
-        'symfony/browser-kit/Symfony/Component/BrowserKit'           => "{$standard}",
-        'symfony/class-loader/Symfony/Component/ClassLoader'         => "{$standard}",
-        'symfony/console/Symfony/Component/Console'                  => "{$standard}",
-        'symfony/css-selector/Symfony/Component/CssSelector'         => "{$standard}",
-        'symfony/debug/Symfony/Component/Debug'                      => "{$standard}",
-        'symfony/dom-crawler/Symfony/Component/DomCrawler'           => "{$standard}",
-        'symfony/event-dispatcher/Symfony/Component/EventDispatcher' => "{$standard}",
-        'symfony/filesystem/Symfony/Component/Filesystem'            => "{$standard}",
-        'symfony/finder/Symfony/Component/Finder'                    => "{$standard}",
-        'symfony/http-foundation/Symfony/Component/HttpFoundation'   => "{$standard}",
-        'symfony/http-kernel/Symfony/Component/HttpKernel'           => "{$standard}",
-        'symfony/process/Symfony/Component/Process'                  => "{$standard}",
-        'symfony/routing/Symfony/Component/Routing'                  => "{$standard}",
-        'symfony/security/Symfony/Component/Security'                => "{$standard}",
-        'symfony/security-core/Symfony/Component/Security/Core'      => "{$standard}",
-        'symfony/translation/Symfony/Component/Translation'          => "{$standard}",
-
-        // Default Laravel 4 install
-        'd11wtq/boris'                          => "{$standard}",
-        'filp/whoops'                           => "{$standard}",
-        'ircmaxell/password-compat'             => "{$standard}",
-        'jeremeamia/SuperClosure'               => "{$standard}",
-        'laravel/framework'                     => "{$standard} build",
-        'monolog/monolog'                       => "{$standard}",
-        'nesbot/carbon'                         => "{$standard}",
-        'nikic/php-parser'                      => "{$standard} test_old",
-        'patchwork/utf8'                        => "{$standard}",
-        'phpseclib/phpseclib'                   => "{$standard}",
-        'predis/predis'                         => "{$standard} bin",
-        'stack/builder'                         => "{$standard}",
-        'swiftmailer/swiftmailer'               => "{$standard} build* notes test-suite create_pear_package.php",
-        'psy/psysh'                             => "{$standard}",
+    'rules' => [
+        /**
+         * Default Laravel 5.0 Packages
+         */
+        'danielstjules/stringy'                                     => "{$standard}",
+        'dnoegel/php-xdg-base-dir'                                  => "{$standard}",
+        'doctrine/inflector'                                        => "{$standard}",
+        'doctrine/instantiator'                                     => "{$standard}",
+        'ircmaxell'                                                 => 'version-test.php',
+        'jakub-onderka/php-console-color'                           => "{$standard}",
+        'jakub-onderka/php-console-highlighter'                     => "{$standard}",
+        'jeremeamia/SuperClosure'                                   => "{$standard}",
+        'league/flysystem'                                          => "{$standard}",
+        'monolog/monolog'                                           => "{$standard} .php_cs",
+        'mtdowling/cron-expression'                                 => "{$standard} .editorconfig",
+        'nesbot/carbon'                                             => "{$standard} .php_cs.dist",
+        'nikic/php-parser'                                          => "{$standard} test_old UPGRADE-1.0.md",
+        'paragonie/random_compat'                                   => "{$standard}",
+        'phpdocumentor/reflection-common'                           => "{$standard}",
+        'phpdocumentor/reflection-docblock'                         => "{$standard}",
+        'phpdocumentor/type-resolver'                               => "{$standard}",
+        'phpspec/php-diff'                                          => "{$standard}",
+        'phpspec/phpspec'                                           => "{$standard} .phpspec",
+        'phpspec/prophecy'                                          => "{$standard}",
+        'phpunit/php-code-coverage'                                 => "{$standard}",
+        'phpunit/php-file-iterator'                                 => "{$standard}",
+        'phpunit/php-text-template'                                 => "{$standard}",
+        'phpunit/php-timer'                                         => "{$standard}",
+        'phpunit/php-token-stream'                                  => "{$standard}",
+        'phpunit/phpunit'                                           => "{$standard} .php_cs",
+        'phpunit/phpunit-mock-objects'                              => "{$standard}",
+        'psr/log/Psr/Log'                                           => "{$standard}",
+        'psy/psysh'                                                 => "{$standard}",
+        'sebastian/comparator'                                      => "{$standard}",
+        'sebastian/diff'                                            => "{$standard} .php_cs",
+        'sebastian/environment'                                     => "{$standard}",
+        'sebastian/exporter'                                        => "{$standard}",
+        'sebastian/global-state'                                    => "{$standard}",
+        'sebastian/recursion-context'                               => "{$standard}",
+        'sebastian/version'                                         => "{$standard}",
+        'swiftmailer/swiftmailer'                                   => "{$standard} .php_cs.dist",
+        'symfony/console/Symfony/Component/Console'                 => "{$standard} Tester",
+        'symfony/debug/Symfony/Component/Debug'                     => "{$standard}",
+        'symfony/event-dispatcher'                                  => "{$standard}",
+        'symfony/filesystem'                                        => "{$standard}",
+        'symfony/finder/Symfony/Component/Finder'                   => "{$standard}",
+        'symfony/http-foundation/Symfony/Component/HttpFoundation'  => "{$standard}",
+        'symfony/http-kernel/Symfony/Component/HttpKernel'          => "{$standard}",
+        'symfony/process/Symfony/Component/Process'                 => "{$standard}",
+        'symfony/routing/Symfony/Component/Routing'                 => "{$standard}",
+        'symfony/security-core/Symfony/Component/Security/Core'     => "{$standard}",
+        'symfony/translation/Symfony/Component/Translation'         => "{$standard}",
+        'symfony/var-dumper/Symfony/Component/VarDumper'            => "{$standard}",
+        'symfony/yaml'                                              => "{$standard}",
+        'webmozart/assert'                                          => "{$standard}",
 
         // Common packages
         'anahkiasen/former'                     => "{$standard}",
@@ -80,5 +102,5 @@ return array(
         'twig/twig'                             => "{$standard}",
         'venturecraft/revisionable'             => "{$standard}",
         'willdurand/geocoder'                   => "{$standard}",
-    )
-);
+    ]
+];
