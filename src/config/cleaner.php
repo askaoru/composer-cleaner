@@ -48,7 +48,7 @@ return [
         'twig/twig'                             => "{$standard}",
         'venturecraft/revisionable'             => "{$standard}",
         'willdurand/geocoder'                   => "{$standard}",
-        
+
         /**
          * Default Laravel 5.0 Packages
          */
@@ -103,5 +103,14 @@ return [
         'symfony/var-dumper/Symfony/Component/VarDumper'            => "{$standard}",
         'symfony/yaml'                                              => "{$standard}",
         'webmozart/assert'                                          => "{$standard}",
+
+        /**
+         * Laravel 5.1 Additional Packages
+         */
+        'fzaninotto/faker'              => "{$standard} Makefile",
+        'hamcrest/hamcrest-php'         => "{$standard} .coveralls.yml .gush.yml TODO.txt",
+        'mockery/mockery'               => "{$standard} travis .styleci.yml",
+        'symfony/css-selector'          => "{$standard}",
+        'symfony/dom-crawler'           => "{$standard}",
     ]
 ];
