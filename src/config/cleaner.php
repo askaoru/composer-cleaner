@@ -5,7 +5,7 @@ $tests = '.travis.yml .scrutinizer.yml phpunit.xml* phpunit.php test tests Test 
 $standard = "{$docs} {$tests}";
 
 return [
-    'dir'   => base_path() . '/vendor',
+    'dir'   => base_path().'/vendor',
     'rules' => [
 
     // Common packages
@@ -49,7 +49,7 @@ return [
         'venturecraft/revisionable'             => "{$standard}",
         'willdurand/geocoder'                   => "{$standard}",
 
-        /**
+        /*
          * Default Laravel 5.0 Packages
          */
         'danielstjules/stringy'                                     => "{$standard}",
@@ -104,7 +104,7 @@ return [
         'symfony/yaml'                                              => "{$standard}",
         'webmozart/assert'                                          => "{$standard}",
 
-        /**
+        /*
          * Laravel 5.1 Additional Packages
          */
         'fzaninotto/faker'              => "{$standard} Makefile",
@@ -112,5 +112,5 @@ return [
         'mockery/mockery'               => "{$standard} travis .styleci.yml",
         'symfony/css-selector'          => "{$standard}",
         'symfony/dom-crawler'           => "{$standard}",
-    ]
+    ],
 ];

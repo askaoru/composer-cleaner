@@ -34,25 +34,25 @@ class ComposerCleanerCommand extends Command
         $filesystem = new Filesystem();
 
         foreach ($rules as $packageBaseDir => $rule) {
-            if (!file_exists($vendorDir . '/' . $packageBaseDir)){
+            if (!file_exists($vendorDir.'/'.$packageBaseDir)) {
                 continue;
             }
 
             $patterns = explode(' ', $rule);
-            foreach($patterns as $pattern) {
+            foreach ($patterns as $pattern) {
                 try {
                     $finder = new Finder();
-                    $finder->name($pattern)->in( $vendorDir . '/' . $packageBaseDir);
+                    $finder->name($pattern)->in($vendorDir.'/'.$packageBaseDir);
                     $files = iterator_to_array($finder);
 
-                    foreach($files as $file){
+                    foreach ($files as $file) {
                         if ($file->isDir()) {
                             $filesystem->deleteDirectory($file);
-                        } elseif($file->isFile()) {
+                        } elseif ($file->isFile()) {
                             $filesystem->delete($file);
                         }
                     }
-                } catch(\Exception $e){
+                } catch (\Exception $e) {
                     $this->error("Could not parse $packageBaseDir ($pattern): ".$e->getMessage());
                 }
             }
